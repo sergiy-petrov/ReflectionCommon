@@ -13,32 +13,32 @@ on: # yamllint disable-line rule:truthy
 jobs:
   code-coverage:
     name: "Code Coverage"
-    uses: "sergiy-petrov/.github/.github/workflows/code-coverage.yml@main"
+    uses: "phpDocumentor.github/.github/workflows/code-coverage.yml@main"
     with:
       composer-root-version: "2.x-dev"
 
   coding-standards:
     name: "Coding Standards"
-    uses: "sergiy-petrov/.github/.github/workflows/coding-standards.yml@main"
+    uses: "phpDocumentor/.github/.github/workflows/coding-standards.yml@v0.5.0"
     with:
       composer-root-version: "2.x-dev"
 
   lint-root:
     name: "Lint root"
-    uses: "sergiy-petrov/.github/.github/workflows/lint.yml@main"
+    uses: "phpDocumentor/.github/.github/workflows/lint.yml@main"
     with:
       composer-options: "--no-check-publish --ansi"
 
   static-analysis:
     name: "Static analysis"
-    uses: "sergiy-petrov/.github/.github/workflows/static-analysis.yml@main"
+    uses: "phpDocumentor/.github/.github/workflows/static-analysis.yml@v0.5.0"
     with:
       php-extensions: "none, ctype, dom, json, mbstring, phar, simplexml, tokenizer, xml, xmlwriter, fileinfo, pcntl, posix"
       composer-root-version: "2.x-dev"
 
   unit-tests:
     name: "Unit test"
-    uses: "sergiy-petrov/.github/.github/workflows/continuous-integration.yml@main"
+    uses: "sergiy-petrov/.github/.github/workflows/continuous-integration.yml@v0.5.0"
     with:
       composer-root-version: "2.x-dev"
       php-versions: "['7.4', '8.0', '8.1', '8.2', '8.3', '8.4']"
